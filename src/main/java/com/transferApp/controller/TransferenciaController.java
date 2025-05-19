@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/transferencias")
 @Tag(name = "Transferências", description = "API para agendamento de transferências financeiras")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TransferenciaController {
 
     private final TransferenciaService transferenciaService;
