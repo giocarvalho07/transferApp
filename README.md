@@ -2,6 +2,11 @@
 
 Sistema para **agendamento de transferências financeiras** entre contas bancárias com **cálculo automático de taxas** baseado na data de execução da transferência.
 
+Este projeto consiste em um sistema para agendamento de transferências financeiras, desenvolvido como parte de uma avaliação técnica. Ele é composto por duas partes principais:
+
+-   **Backend:** Uma API RESTful construída com Spring Boot ```(https://github.com/giocarvalho07/transferApp)```
+-   **Frontend:** Uma interface de usuário moderna e reativa construída com Vue.js ```(https://github.com/giocarvalho07/transferencias-app)```
+
 ## Tecnologias Utilizadas
 
 - Java 11
