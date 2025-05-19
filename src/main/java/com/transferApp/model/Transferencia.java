@@ -24,22 +24,18 @@ public class Transferencia {
     @NotBlank
     @NotNull
     @Pattern(regexp = "\\d{10}", message = "A conta deve ter 10 dígitos")
-    private String contaDestino = "XXXXXXXXXX";
+    private String contaDestino;
 
-    @NotBlank
     @NotNull
     @Positive
     private BigDecimal valor;
 
-    @NotBlank
     @NotNull
     @Positive
     private BigDecimal taxa;
 
-
+    @NotNull
     private LocalDate dataTransferencia;
 
-
     private LocalDate dataAgendamento = LocalDate.now();
-
 }
