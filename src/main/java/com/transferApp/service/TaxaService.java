@@ -8,8 +8,14 @@ import java.time.temporal.ChronoUnit;
 @Service
 public class TaxaService {
 
+
     public BigDecimal calcularTaxa(BigDecimal valor, LocalDate dataTransferencia) {
         LocalDate hoje = LocalDate.now();
+
+        if (dataTransferencia.isBefore(hoje)) {
+            throw new IllegalArgumentException("A data de transferência não pode ser no passado");
+        }
+
         long dias = ChronoUnit.DAYS.between(hoje, dataTransferencia);
 
         if (dias == 0) {
