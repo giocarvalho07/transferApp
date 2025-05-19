@@ -47,14 +47,14 @@ Retorna todas as transferências agendadas.
 ---
 
 🧪 Casos de Teste Manuais
-Cenário	Entrada (dias)	Valor	Taxa Esperada	Status
-Transferência Hoje	0	1000	R$ 28.00	        ✅ Sucesso
-Transferência em 5 dias	6	2000	R$ 12.00	    ✅ Sucesso
-Transferência em 15 dias	16	3000	R$ 246.00	✅ Sucesso
-Transferência em 25 dias	26	1500	R$ 103.50	✅ Sucesso
-Transferência em 36 dias	37	1000	R$ 47.00	✅ Sucesso
-Transferência em 50 dias	50	1000	R$ 17.00	✅ Sucesso
-Transferência em 60 dias	60	1000	         	❌ Erro 400
+Cenário	Entrada (dias)	Valor	Taxa Esperada	Status </br>
+Transferência Hoje	0	1000	R$ 28.00	        ✅ Sucesso </br>
+Transferência em 5 dias	6	2000	R$ 12.00	    ✅ Sucesso </br>
+Transferência em 15 dias	16	3000	R$ 246.00	✅ Sucesso </br>
+Transferência em 25 dias	26	1500	R$ 103.50	✅ Sucesso </br>
+Transferência em 36 dias	37	1000	R$ 47.00	✅ Sucesso </br>
+Transferência em 50 dias	50	1000	R$ 17.00	✅ Sucesso </br>
+Transferência em 60 dias	60	1000	         	❌ Erro 400</br>
 
 ⚠️ Validações Importantes
 Conta destino com exatamente 10 dígitos
