@@ -2,17 +2,17 @@
 
 Sistema para **agendamento de transferências financeiras** entre contas bancárias com **cálculo automático de taxas** baseado na data de execução da transferência.
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-- Java 17
+- Java 11
 - Spring Boot 3.x
 - Spring Data JPA
 - H2 Database (em memória)
 - Swagger OpenAPI
 - Lombok
-- Jakarta Validation
 
-## 📋 Regras de Negócio (Cálculo de Taxas)
+
+## Regras de Negócio (Cálculo de Taxas)
 
 | Dias de Antecedência | Tipo de Taxa              | Valor da Taxa                          |
 |----------------------|---------------------------|----------------------------------------|
@@ -26,7 +26,7 @@ Sistema para **agendamento de transferências financeiras** entre contas bancár
 
 ---
 
-## 📦 Como rodar o projeto localmente
+## Como rodar o projeto localmente
 
 ```bash```
 git clone https://github.com/giocarvalho07/transferApp.git
@@ -35,52 +35,34 @@ cd transferApp
 
 Acesse a documentação Swagger: http://localhost:8080/swagger-ui.html
 
-📡 Endpoints da API
-POST /api/transferencias
+---
+
+## Endpoints da API
+``` POST /api/transferencias ```
 Agendar nova transferência
 
-Requisição (TransferenciaDTO):
-
-{
-  "contaDestino": "1234567890",
-  "valor": 1000.00,
-  "dataTransferencia": "2025-05-25"
-}
-
-{
-  "id": 1,
-  "contaOrigem": "0000000000",
-  "contaDestino": "1234567890",
-  "valor": 1000.00,
-  "taxa": 12.00,
-  "dataTransferencia": "2025-05-25",
-  "dataAgendamento": "2025-05-19"
-}
-
-GET /api/transferencias
+``` GET /api/transferencias  ```
 Retorna todas as transferências agendadas.
+
+---
 
 🧪 Casos de Teste Manuais
 Cenário	Entrada (dias)	Valor	Taxa Esperada	Status
-Transferência Hoje	0	1000	R$ 28.00	✅ Sucesso
-Transferência em 5 dias	6	2000	R$ 12.00	✅ Sucesso
+Transferência Hoje	0	1000	R$ 28.00	        ✅ Sucesso
+Transferência em 5 dias	6	2000	R$ 12.00	    ✅ Sucesso
 Transferência em 15 dias	16	3000	R$ 246.00	✅ Sucesso
 Transferência em 25 dias	26	1500	R$ 103.50	✅ Sucesso
 Transferência em 36 dias	37	1000	R$ 47.00	✅ Sucesso
 Transferência em 50 dias	50	1000	R$ 17.00	✅ Sucesso
-Transferência em 60 dias	60	1000	❌	❌ Erro 400
+Transferência em 60 dias	60	1000	         	❌ Erro 400
 
 ⚠️ Validações Importantes
 Conta destino com exatamente 10 dígitos
-
 Valor deve ser positivo
-
 Data da transferência deve ser hoje ou no futuro
-
 Transferência acima de 50 dias será rejeitada
 
-
-
+---
 
 ✅ POSTMAN COLLECTION (JSON)
 Criei uma coleção com:
@@ -96,7 +78,7 @@ Organizada em uma coleção chamada TransferApp Tests
 
 ---
 
-## 📤 Importar Testes no Postman
+## Importar Testes no Postman
 
 Você pode importar os testes manuais diretamente no [Postman](https://www.postman.com/) com o arquivo JSON disponível neste repositório:
 
