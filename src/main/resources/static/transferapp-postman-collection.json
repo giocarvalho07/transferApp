@@ -1,0 +1,93 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "name": "TransferApp Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Transferência Hoje (taxa fixa + 2.5%)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"1234567890\",\n  \"valor\": 1000.00,\n  \"dataTransferencia\": \"2025-05-19\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 5 dias (taxa R$ 12)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"1111222233\",\n  \"valor\": 2000.00,\n  \"dataTransferencia\": \"2025-05-24\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 15 dias (taxa 8.2%)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"2222333344\",\n  \"valor\": 3000.00,\n  \"dataTransferencia\": \"2025-06-03\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 25 dias (taxa 6.9%)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"3333444455\",\n  \"valor\": 1500.00,\n  \"dataTransferencia\": \"2025-06-13\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 36 dias (taxa 4.7%)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"4444555566\",\n  \"valor\": 1000.00,\n  \"dataTransferencia\": \"2025-06-24\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 50 dias (taxa 1.7%)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"5555666677\",\n  \"valor\": 1000.00,\n  \"dataTransferencia\": \"2025-07-08\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    },
+    {
+      "name": "Transferência 60 dias (Erro esperado)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contaDestino\": \"6666777788\",\n  \"valor\": 1000.00,\n  \"dataTransferencia\": \"2025-08-10\"\n}"
+        },
+        "url": { "raw": "http://localhost:8080/api/transferencias", "host": ["localhost"], "port": "8080", "path": ["api", "transferencias"] }
+      }
+    }
+  ]
+}
