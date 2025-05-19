@@ -45,7 +45,6 @@ Agendar nova transferência
 ``` GET /api/transferencias  ```
 Retorna todas as transferências agendadas.
 
----
 
 
 ## Casos de Teste Manuais </br>
@@ -65,7 +64,7 @@ Valor deve ser positivo </br>
 Data da transferência deve ser hoje ou no futuro </br>
 Transferência acima de 50 dias será rejeitada </br>
 
----
+
 
 ## POSTMAN COLLECTION (JSON)
 Criei uma coleção com:
@@ -77,7 +76,7 @@ Criei uma coleção com:
 Organizada em uma coleção chamada TransferApp Tests
 
 
----
+
 
 
 ## Importar Testes no Postman
@@ -98,7 +97,7 @@ Para utilizar:
 3. Selecione o arquivo JSON acima
 4. Execute os testes apontando para `http://localhost:8080`
 
----
+
 
 
 
