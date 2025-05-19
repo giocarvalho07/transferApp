@@ -38,6 +38,7 @@ Acesse a documentação Swagger: http://localhost:8080/swagger-ui.html
 ---
 
 ## Endpoints da API
+
 ``` POST /api/transferencias ```
 Agendar nova transferência
 
@@ -66,7 +67,7 @@ Transferência acima de 50 dias será rejeitada </br>
 
 ---
 
-##✅ POSTMAN COLLECTION (JSON)
+## POSTMAN COLLECTION (JSON)
 Criei uma coleção com:
 
 6 cenários de sucesso (taxas válidas)
@@ -78,7 +79,6 @@ Organizada em uma coleção chamada TransferApp Tests
 
 ---
 
----
 
 ## Importar Testes no Postman
 
