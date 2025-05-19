@@ -1,0 +1,121 @@
+# TransferApp 📲
+
+Sistema para **agendamento de transferências financeiras** entre contas bancárias com **cálculo automático de taxas** baseado na data de execução da transferência.
+
+## 🚀 Tecnologias Utilizadas
+
+- Java 17
+- Spring Boot 3.x
+- Spring Data JPA
+- H2 Database (em memória)
+- Swagger OpenAPI
+- Lombok
+- Jakarta Validation
+
+## 📋 Regras de Negócio (Cálculo de Taxas)
+
+| Dias de Antecedência | Tipo de Taxa              | Valor da Taxa                          |
+|----------------------|---------------------------|----------------------------------------|
+| 0                    | Fixa + Percentual         | R$ 3,00 + 2,5% do valor                |
+| 1 a 10               | Fixa                      | R$ 12,00                               |
+| 11 a 20              | Percentual                | 8,2% do valor                          |
+| 21 a 30              | Percentual                | 6,9% do valor                          |
+| 31 a 40              | Percentual                | 4,7% do valor                          |
+| 41 a 50              | Percentual                | 1,7% do valor                          |
+| > 50 dias            | **Inválido**              | Rejeitado com erro                     |
+
+---
+
+## 📦 Como rodar o projeto localmente
+
+```bash```
+git clone https://github.com/giocarvalho07/transferApp.git
+cd transferApp
+./mvnw spring-boot:run
+
+Acesse a documentação Swagger: http://localhost:8080/swagger-ui.html
+
+📡 Endpoints da API
+POST /api/transferencias
+Agendar nova transferência
+
+Requisição (TransferenciaDTO):
+
+{
+  "contaDestino": "1234567890",
+  "valor": 1000.00,
+  "dataTransferencia": "2025-05-25"
+}
+
+{
+  "id": 1,
+  "contaOrigem": "0000000000",
+  "contaDestino": "1234567890",
+  "valor": 1000.00,
+  "taxa": 12.00,
+  "dataTransferencia": "2025-05-25",
+  "dataAgendamento": "2025-05-19"
+}
+
+GET /api/transferencias
+Retorna todas as transferências agendadas.
+
+🧪 Casos de Teste Manuais
+Cenário	Entrada (dias)	Valor	Taxa Esperada	Status
+Transferência Hoje	0	1000	R$ 28.00	✅ Sucesso
+Transferência em 5 dias	6	2000	R$ 12.00	✅ Sucesso
+Transferência em 15 dias	16	3000	R$ 246.00	✅ Sucesso
+Transferência em 25 dias	26	1500	R$ 103.50	✅ Sucesso
+Transferência em 36 dias	37	1000	R$ 47.00	✅ Sucesso
+Transferência em 50 dias	50	1000	R$ 17.00	✅ Sucesso
+Transferência em 60 dias	60	1000	❌	❌ Erro 400
+
+⚠️ Validações Importantes
+Conta destino com exatamente 10 dígitos
+
+Valor deve ser positivo
+
+Data da transferência deve ser hoje ou no futuro
+
+Transferência acima de 50 dias será rejeitada
+
+
+
+
+✅ POSTMAN COLLECTION (JSON)
+Criei uma coleção com:
+
+6 cenários de sucesso (taxas válidas)
+
+1 cenário de erro (data inválida > 50 dias)
+
+Organizada em uma coleção chamada TransferApp Tests
+
+
+---
+
+---
+
+## 📤 Importar Testes no Postman
+
+Você pode importar os testes manuais diretamente no [Postman](https://www.postman.com/) com o arquivo JSON disponível neste repositório:
+
+📁 [`transferapp-postman-collection.json`](src/main/resources/static/transferapp-postman-collection.json)
+
+> Caminho: `src/main/resources/static/transferapp-postman-collection.json`
+
+A coleção contém:
+- ✅ 6 testes válidos com taxas aplicadas
+- ❌ 1 teste inválido (erro de agendamento acima de 50 dias)
+
+Para utilizar:
+1. Abra o Postman
+2. Vá em **Import > Upload Files**
+3. Selecione o arquivo JSON acima
+4. Execute os testes apontando para `http://localhost:8080`
+
+---
+
+
+
+
