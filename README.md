@@ -46,7 +46,9 @@ Retorna todas as transferências agendadas.
 
 ---
 
-🧪 Casos de Teste Manuais
+
+## Casos de Teste Manuais </br>
+
 Cenário	Entrada (dias)	Valor	Taxa Esperada	Status </br>
 Transferência Hoje	0	1000	R$ 28.00	        ✅ Sucesso </br>
 Transferência em 5 dias	6	2000	R$ 12.00	    ✅ Sucesso </br>
@@ -56,15 +58,15 @@ Transferência em 36 dias	37	1000	R$ 47.00	✅ Sucesso </br>
 Transferência em 50 dias	50	1000	R$ 17.00	✅ Sucesso </br>
 Transferência em 60 dias	60	1000	         	❌ Erro 400</br>
 
-⚠️ Validações Importantes
-Conta destino com exatamente 10 dígitos
-Valor deve ser positivo
-Data da transferência deve ser hoje ou no futuro
-Transferência acima de 50 dias será rejeitada
+⚠️ Validações Importantes </br>
+Conta destino com exatamente 10 dígitos </br>
+Valor deve ser positivo </br>
+Data da transferência deve ser hoje ou no futuro </br>
+Transferência acima de 50 dias será rejeitada </br>
 
 ---
 
-✅ POSTMAN COLLECTION (JSON)
+##✅ POSTMAN COLLECTION (JSON)
 Criei uma coleção com:
 
 6 cenários de sucesso (taxas válidas)
